@@ -1,0 +1,132 @@
+@import './OTPForm.css'; /* Reuse shared styles */
+
+.signup-background {
+  background-image: url('coding.gif'); /* 🔁 Update with your image path */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 35px; 
+}
+
+.signup-form {
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+/* Optional: faded email */
+.faded {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Add this to SignUpForm.css */
+.signup-input {
+  height: 55px;
+  padding: 6px 12px;
+  border-radius: 16px;
+  background-color: black;
+  color: white;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 360px;
+  border: 2px solid transparent;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.signup-input:focus {
+  border: 2px solid rgba(0, 120, 67);
+  box-shadow: 0 0 12px rgba(0, 255, 170, 0.5), 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.custom-select {
+  width: 100%;
+  max-width: 360px;
+  font-size: 1rem;
+}
+
+/* The outer dropdown box */
+/* Dropdown container */
+.signup__control {
+  background-color: black !important;
+  /*border: none !important;
+  box-shadow: none !important;*/
+  border-radius: 16px !important;
+  padding: 6px 12px;
+  width: 100% !important; /* Ensure control takes full width */
+  overflow: hidden;
+}
+
+.signup__control:hover {
+  outline: rgba(0, 0, 0, 0) !important;
+  border: 2px solid rgba(0, 0, 0, 0) !important;
+  box-shadow: none !important;
+}
+
+.signup__control--is-selected{
+outline: none !important;
+  box-shadow: 0 0 12px rgba(0, 255, 170, 0.5), 0 8px 16px rgba(0, 120, 67, 0.6) !important;
+  border: 2px solid rgba(0, 120, 67) !important;
+}
+
+.signup__control:focus,
+.signup__control--is-focused {
+  outline: none !important;
+  box-shadow: 0 0 12px rgba(0, 255, 170, 0.5), 0 8px 16px rgba(0, 120, 67, 0.6) !important;
+  border: 2px solid rgba(0, 120, 67) !important;
+}
+
+/* Selected text inside control */
+.signup__single-value {
+  color: white !important;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Dropdown menu should match control width */
+.signup__menu {
+  background-color: black !important;
+  border-radius: 16px !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  overflow: hidden !important;
+  width: 100% !important; /* match parent width */
+}
+
+/* Dropdown options */
+.signup__option {
+  padding: 8px 12px;
+  border-radius: 10px !important;
+  margin: 4px 6px;
+  color: white;
+  font-size: 0.9rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: nowrap;         /* prevent multi-line */
+  overflow: hidden;            /* hide overflow */
+  text-overflow: ellipsis;     /* show ellipsis */
+  transition: background 0.2s ease, color 0.2s ease;
+  max-width: calc(100% - 12px); /* ensure spacing */
+}
+
+/* Hover & selected */
+.signup__option:hover,
+.signup__option--is-focused {
+  background-color: rgb(0, 120, 67) !important;
+  color: black !important;
+}
+
+.signup__option--is-selected{
+  background-color: rgba(0, 0, 0, 0) !important;
+  color: rgb(255, 255, 255) !important;
+}

@@ -1,2 +1,0 @@
-# faqgrades
-Leetcode Clone

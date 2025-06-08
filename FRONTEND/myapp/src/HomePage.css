@@ -1,0 +1,227 @@
+.home-page {
+  width: 100%;
+  height: 100vh;
+  background-image: url('./coding.gif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+  position: relative;
+  overflow: auto;
+}
+
+.top-bar-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 70px;
+  width: 100%;
+  background-color: rgb(35, 35, 35);
+  z-index: 1;
+}
+
+.text-logo {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-weight: 500;
+  font-size: 1.4rem;
+  color: #f0f0f0;
+  text-decoration: none;
+  z-index: 10;
+}
+
+.help-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background: linear-gradient(145deg, rgba(0, 120, 67), rgba(139, 208, 177));
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.help-btn:hover {
+  box-shadow: 0 0 12px rgba(0, 255, 170, 0.5), 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+
+.home-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-grow: 1;
+  padding: 20px;
+  max-width: 800px;
+  width: 100%;
+  height: 100%; /* full height to allow centering */
+  max-height: calc(100vh-70px);
+  box-sizing: border-box;
+}
+
+
+.content-box {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.main-heading {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 0;
+  color: #000000;
+}
+
+.main-subheading {
+  font-size: 1.5rem;
+  margin-bottom: 8px 0 0 0;
+  color: #000000;
+}
+
+.account-box {
+  background: rgb(35, 35, 35);
+  padding: 1.5rem;
+  border-radius: 20px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 8px 32px 0 rgb(37, 37, 37);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  height: 40vh;
+  gap: 8px;
+  box-sizing: border-box;
+}
+
+
+.account-box h2 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+}
+
+.input-button-row {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto 20px auto;
+  flex-wrap: wrap; /* wraps on small screens */
+}
+
+.input-button-row .email-input {
+  flex: 2;
+  min-width: 180px;
+  height: 40px;
+  margin: 0;
+}
+
+.input-button-row .join-btn {
+  flex: 1;
+  height: 40px;
+  min-width: 100px;
+  margin: 0;
+  padding: 0 10px;
+}
+
+.email-input {
+  padding: 0 20px;
+  height: 40px;
+  width: 100%;
+  max-width: 360px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  background: rgba(0, 0, 0, 0.379);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #ffffff;
+  outline: none;
+  text-align: left;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid transparent;
+}
+
+.email-input:focus {
+  border: 2px solid rgba(0, 120, 67);
+  box-shadow: 0 0 12px rgba(0, 255, 170, 0.5), 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.join-btn {
+  padding: 10px 0px;
+  background: linear-gradient(145deg, rgba(0, 120, 67, 0.65), rgba(139, 208, 177, 0.6));
+  color: #ffffff;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 140px;
+  text-align: center;
+  margin-bottom: 0;
+  box-sizing: border-box;
+}
+
+.join-btn:hover {
+  box-shadow: 0 0 12px rgba(0, 255, 170, 0.5), 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.signin-text {
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+.signin-text a {
+  color: white;
+  text-decoration: underline;
+}
+
+.policy-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  margin-top: 20px;
+}
+
+.policy-btn {
+  flex: 1;
+  background: none;
+  border: none;
+  color: #ccc;
+  font-size: 0.8rem;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.policy-btn:hover {
+  color: white;
+}
+
+.divider {
+  color: #ccc;
+  font-size: 0.8rem;
+  padding: 0 5px;
+  user-select: none;
+}
+
+.error-text {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
