@@ -16,7 +16,7 @@ const app = express();
 connectDB();
 
 // Allow CORS (adjust as needed)
-app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
+app.use(cors({ origin: 'https://faqgrades.vercel.app/', credentials: true }));
 
 // Middleware to parse JSON
 app.use(express.json());

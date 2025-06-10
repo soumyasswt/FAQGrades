@@ -21,7 +21,7 @@ function HomePage() {
     setLoading(true);
 
     try {
-      const response = await fetch('http://localhost:5000/api/users/request-otp', {
+      const response = await fetch('https://faqgrades-backend-production.up.railway.app/api/users/request-otp', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, mode: 'signup' }),
