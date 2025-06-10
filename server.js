@@ -29,7 +29,9 @@ app.use('/api/help', helpRoutes);
 // placed **before** your existing userRoutes to avoid conflicts,
 // or with a more specific path if needed.
 app.use('/api/users', usersRouter);  // contains /signup-finalize POST endpoint
-
+app.get('/', (req, res) => {
+  res.send('Backend is running 🎉');
+});
 // Start server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
