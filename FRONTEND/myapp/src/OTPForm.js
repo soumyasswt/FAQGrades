@@ -136,16 +136,21 @@ function OTPForm() {
   };
 
   const handleProceed = () => {
+    localStorage.setItem('isAuthenticated', 'true');
+    localStorage.setItem('userEmail', email); // ✅ Store email
     if (from === 'signup') {
-      navigate('/signup-form', { state: { email } });
+      localStorage.setItem('signupInProgress', 'true');
+      navigate('/signup-form', { replace: true, state: { email } });
     } else if (from === 'signin') {
-      navigate('/community', { state: { email } });
-    } else {
-      navigate('/');
+      navigate('/community', { replace: true, state: { email } });
     }
   };
 
-  if (!email || !from) return null;
+  useEffect(() => {
+    if (!email) {
+      navigate('/', { replace: true });
+    }
+  }, [email, navigate]);
 
   return (
     <div className="otp-background">
@@ -154,7 +159,8 @@ function OTPForm() {
 
       {/* Logo and help button */}
       <Link to="/" className="text-logo">FAQGrades</Link>
-      <button className="help-btn">Help</button>
+      <Link to="/help" className="help-btn">Help</Link>
+
 
       {/* Main glass box container */}
       <div className="otp-glass-box">

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
 import Select from 'react-select';
 import './SignUpForm.css';
@@ -81,6 +82,7 @@ function SignUpForm() {
     e.preventDefault();
     setError('');
     setSuccess('');
+    localStorage.removeItem('signupInProgress');
 
     try {
       const response = await fetch('/api/users/signup-finalize', {
@@ -94,14 +96,21 @@ function SignUpForm() {
         setError(data.message || 'Something went wrong.');
       } else {
         setSuccess('Registration successful!');
-        setTimeout(() => navigate('/community', { state: { email } }), 1000);
+        localStorage.setItem('isAuthenticated', 'true');
+        localStorage.setItem('userEmail', email); // ✅ Store email
+        setTimeout(() => navigate('/community', { replace: true }), 1000);
       }
     } catch {
       setError('Server error. Try again later.');
     }
   };
 
-  if (!email) return null;
+  useEffect(() => {
+    const signupInProgress = localStorage.getItem('signupInProgress');
+    if (!email || !signupInProgress) {
+      navigate('/', { replace: true });
+    }
+  }, [email, navigate]);
 
   return (
     <div className="signup-background">
@@ -110,7 +119,8 @@ function SignUpForm() {
 
       {/* Logo and help button */}
       <Link to="/" className="text-logo">FAQGrades</Link>
-      <button className="help-btn">Help</button>
+      <Link to="/help" className="help-btn">Help</Link>
+
 
       <div className="otp-glass-box">
         <div className="otp-image-box">
@@ -177,6 +187,13 @@ function SignUpForm() {
               onChange={handleSelectChange}
               isSearchable={false}
             />
+
+            <div className="signup-disclaimer">
+              By continuing, you agree to our{' '}
+              <Link to="/terms" className="policy-link">Terms of Service</Link>{' '}
+              and{' '}
+              <Link to="/privacy" className="policy-link">Privacy Policy</Link>.
+            </div>
 
             <button className="verify-btn" type="submit">Submit</button>
           </form>

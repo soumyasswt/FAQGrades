@@ -47,7 +47,8 @@ function HomePage() {
 
       {/* Logo and Help buttons stay fixed above it */}
       <Link to="/" className="text-logo">FAQGrades</Link>
-      <button className="help-btn">Help</button>
+      <Link to="/help" className="help-btn">Help</Link>
+
 
       <div className="home-content">
         <div className="content-box">
@@ -78,9 +79,9 @@ function HomePage() {
           </p>
 
           <div className="policy-buttons">
-            <button className="policy-btn">Terms of Use</button>
+            <Link to="/terms" className="policy-btn">Terms of Service</Link>
             <span className="divider">|</span>
-            <button className="policy-btn">Privacy Policy</button>
+            <Link to="/privacy" className="policy-btn">Privacy Policy</Link>
           </div>
         </div>
       </div>

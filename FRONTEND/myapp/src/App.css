@@ -14,8 +14,8 @@ html, body {
 .app-container {
   position: relative;
   width: 100%;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 /* Splash screen - always visible beneath homepage */

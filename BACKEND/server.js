@@ -1,6 +1,8 @@
 const express = require('express');
 const connectDB = require('./config/db');
-const userRoutes = require('./routes/userRoutes');
+const userRoutes = require('./routes/userRoutes'); // your existing user routes
+const helpRoutes = require('./routes/helpRoutes');
+const usersRouter = require('./routes/users'); // new signup-finalize route
 const cors = require('cors');
 const dotenv = require('dotenv');
 
@@ -20,7 +22,13 @@ app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
 app.use(express.json());
 
 // API routes
-app.use('/api/users', userRoutes);
+app.use('/api/users', userRoutes);    // your existing user routes
+app.use('/api/help', helpRoutes); 
+
+// Add the signup-finalize route separately, 
+// placed **before** your existing userRoutes to avoid conflicts,
+// or with a more specific path if needed.
+app.use('/api/users', usersRouter);  // contains /signup-finalize POST endpoint
 
 // Start server
 const PORT = process.env.PORT || 5000;

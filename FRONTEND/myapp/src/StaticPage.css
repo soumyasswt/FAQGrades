@@ -1,0 +1,90 @@
+.policy-page {
+  background-color: #000;
+  color: #ccc;
+  min-height: 100vh;
+  width: 100%;
+  overflow-y: auto;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.policy-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #000;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #333;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.policy-brand {
+  font-size: 1rem;
+  color: #999;
+  letter-spacing: 1px;
+}
+
+.auth-links {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.auth-text {
+  cursor: pointer;
+}
+
+.or-text {
+  color: #777;
+}
+
+.tos-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+}
+
+.tos-heading-wrapper {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.center-title {
+  font-size: 1rem;
+  color: #888;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 1.2rem;
+  color: #eee;
+  margin-top: 2rem;
+}
+
+p, li {
+  font-size: 1rem;
+  color: #bbb;
+  line-height: 1.6;
+}
+
+ul {
+  padding-left: 1.5rem;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #444;
+  margin: 2rem 0;
+}
