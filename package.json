@@ -6,6 +6,7 @@
     "start": "node server.js",
     "dev": "nodemon server.js"
   },
+  "typescript": "5.8.3",
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -21,5 +22,8 @@
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
+  },
+  "engines": {
+    "node": "22.16.0"
   }
 }
