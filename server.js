@@ -16,7 +16,7 @@ const app = express();
 connectDB();
 
 // Allow CORS (adjust as needed)
-app.use(cors({ origin: 'https://faqgrades.vercel.app/', credentials: true }));
+app.use(cors({ origin: 'https://faqgrades.vercel.app', credentials: true }));
 
 // Middleware to parse JSON
 app.use(express.json());
@@ -33,5 +33,5 @@ app.get('/', (req, res) => {
   res.send('Backend is running 🎉');
 });
 // Start server
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
